@@ -1,8 +1,8 @@
 class Data {
-    private courseNumber: string
-    private topicName: string
-    private teacherName: string
-    private time: string
+    private courseNumber: string = ""
+    private topicName: string = ""
+    private teacherName: string = ""
+    private time: Date = new Date()
 
     public getCourseNumber(): string {
         return this.courseNumber
@@ -28,11 +28,11 @@ class Data {
         this.teacherName = teacherName
     }
 
-    public getTime(): string {
+    public getTime(): Date {
         return this.time
     }
 
-    public setTime(time: string): void {
+    public setTime(time: Date): void {
         this.time = time
     }
 

@@ -1,5 +1,5 @@
 import Data from "./Data"
-import { Observer } from "./observer"
+import { Observer } from "./Observer"
 
 class Teacher implements Observer {
     
