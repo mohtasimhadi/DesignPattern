@@ -5,35 +5,35 @@ class Data {
     private time: string
 
     public getCourseNumber(): string {
-        return this.courseNumber;
+        return this.courseNumber
     }
 
     public setCourseNumber(courseNumber: string): void {
-        this.courseNumber = courseNumber;
+        this.courseNumber = courseNumber
     }
 
     public getTopicName(): string {
-        return this.topicName;
+        return this.topicName
     }
 
     public setTopicName(topicName: string): void {
-        this.topicName = topicName;
+        this.topicName = topicName
     }
 
     public getTeacherName(): string {
-        return this.teacherName;
+        return this.teacherName
     }
 
     public setTeacherName(teacherName: string): void {
-        this.teacherName = teacherName;
+        this.teacherName = teacherName
     }
 
     public getTime(): string {
-        return this.time;
+        return this.time
     }
 
     public setTime(time: string): void {
-        this.time = time;
+        this.time = time
     }
 
 }
