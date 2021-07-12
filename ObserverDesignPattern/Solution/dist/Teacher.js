@@ -5,12 +5,12 @@ var Teacher = /** @class */ (function () {
         var _this = this;
         this.data = {};
         this.showTime = function () {
-            return _this.data.getTime.toLocaleString();
+            return _this.data.getTime().toLocaleString();
         };
         this.showOthers = function () {
-            return "Course No: " + _this.data.getCourseNumber + " "
-                + ("Topic: " + _this.data.getTopicName + " ")
-                + ("Teacher: " + _this.data.getTeacherName);
+            return "Course No: " + _this.data.getCourseNumber() + " \n"
+                + ("Topic: " + _this.data.getTopicName() + " \n")
+                + ("Teacher: " + _this.data.getTeacherName());
         };
         this.show = function () {
             console.log("Teacher View");
