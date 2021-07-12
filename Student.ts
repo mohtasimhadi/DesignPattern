@@ -6,13 +6,13 @@ class Student implements Observer{
     data = {} as Data
 
     private showTime = (): string => {
-        return this.data.time.toLocaleString('en-us',{hour12:true})
+        return this.data.getTime.toLocaleString()
     }
 
     private showOthers = (): string => {
-        return `Course No: ${this.data.courseNumber}\n`
-            + `Topic: ${this.data.topicName}\n`
-            + `Teacher: ${this.data.teacherName}`
+        return `Course No: ${this.data.getCourseNumber}\n`
+            + `Topic: ${this.data.getTopicName}\n`
+            + `Teacher: ${this.data.getTeacherName}`
     }
 
     update(data: Data) {
