@@ -12,3 +12,5 @@ abstract class Decorator implements Text {
         return this.text.getModifiedText()
     }
 }
+
+export default Decorator
