@@ -3,7 +3,7 @@ import Decorator from "./Decorator"
 class Bold extends Decorator {
 
     getModifiedText():string {
-        return super.getModifiedText().bold();
+        return super.getModifiedText().bold()
     }
 }
 
