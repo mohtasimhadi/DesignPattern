@@ -11,3 +11,5 @@ class Plain implements Text {
         return this.text
     }
 }
+
+export default Plain
