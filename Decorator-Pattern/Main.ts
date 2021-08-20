@@ -1,7 +1,12 @@
-import Plain from "./Plain"
-import Italic from "./Italic";
-import Bold from "./Bold";
+import Circle from "./Circle"
+import Rectangle from "./Rectangle"
+import RedShapeDecorator from "./RedShapeDecorator"
+import Shape from "./Shape"
 
-const text = new Italic(new Bold(new Plain("Design Pattern")))
+const circle: Shape = new Circle()
+const redCircle: Shape = new RedShapeDecorator(new Circle())
+const redRectangle: Shape = new RedShapeDecorator(new Rectangle())
 
-console.log("Decorated :" + text)
+circle.draw()
+redCircle.draw()
+redRectangle.draw()
