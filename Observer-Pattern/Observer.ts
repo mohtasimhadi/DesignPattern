@@ -1,8 +1,8 @@
 import Subject from './Subject'
 
-interface Observer {
-    // Receive update from subject.
-    update(subject: Subject): void;
+abstract class Observer {
+    protected subject: Subject
+    public abstract update(): void
 }
 
 export default Observer

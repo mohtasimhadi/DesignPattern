@@ -1,14 +1,27 @@
 import Observer from "./Observer"
 
-interface Subject {
-    // Attach an observer to the subject.
-    attach(observer: Observer): void;
+class Subject {
+    private observers: Array<Observer> = new Array<Observer>()
+    private state: number
 
-    // Detach an observer from the subject.
-    detach(observer: Observer): void;
+    public getState(): number {
+        return this.state
+    }
 
-    // Notify all observers about an event.
-    notify(): void;
+    public setState(state: number): void {
+        this.state = state
+        this.notifyAllObserver()
+    }
+
+    public attach(observer: Observer): void {
+        this.observers.push(observer)
+    }
+
+    public notifyAllObserver(): void{
+        for (let i = 0; i<this.observers.length; i++) {
+            this.observers[i].update()
+        }
+    }
 }
 
 export default Subject

@@ -1,18 +1,16 @@
-import ConcreteSubject from "./ConcreteSubject"
-import ConcreteObserverA from "./ConcreteObserverA"
-import ConcreteObserverB from "./ConcreteObserverB"
+import BinaryObserver from "./BinaryObserver"
+import HexaObserver from "./HexaObserver"
+import OctalObserver from "./OctalObserver"
+import Subject from "./Subject"
 
-const subject = new ConcreteSubject();
+const subject: Subject = new Subject()
 
-const observer1 = new ConcreteObserverA();
-subject.attach(observer1);
+new HexaObserver(subject)
+new OctalObserver(subject)
+new BinaryObserver(subject)
 
-const observer2 = new ConcreteObserverB();
-subject.attach(observer2);
+console.log('Fisrt state change: 15')
+subject.setState(15)
 
-// subject.someBusinessLogic();
-// subject.someBusinessLogic();
-
-subject.detach(observer2);
-
-// subject.someBusinessLogic();
+console.log('Second state change: 10')
+subject.setState(10)
