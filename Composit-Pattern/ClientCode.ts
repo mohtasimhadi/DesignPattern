@@ -1,0 +1,37 @@
+import Files from './Files'
+import Folder from './Folder'
+
+let strategy=new Files('Strategy Pattern','ppt')
+let oobserver=new Files('Observer Pattern','pdf')
+let midSyllabus=new Files('MidSyllabus','doc')
+let coomposite=new Files('Component Pattern','ppt')
+let final_Syllabus=new Files('FinalSyllabus','doc')
+let assignment1=new Files('Assignment-1','pdf')
+let assignment2=new Files('Assignment-2','pdf')
+let _readMe=new Files('readMe','doc')
+let _midExam=new Folder('Mid Exam','folder')
+let _finalExam=new Folder('Final Exam','folder')
+let leectures=new Folder('Lecturers','folder')
+let assignmets=new Folder('Assignment Exam','folder')
+let DP=new Folder('Design Pattern','folder')
+
+_midExam.addItem(strategy)
+_midExam.addItem(oobserver)
+console.log(_midExam.singleClick())
+console.log(_midExam.doubleClick())
+
+_midExam.addItem(midSyllabus)
+_finalExam.addItem(coomposite)
+_finalExam.addItem(_finalExam)
+leectures.addItem(_midExam)
+leectures.addItem(_finalExam)
+assignmets.addItem(assignment1)
+assignmets.addItem(assignment2)
+DP.addItem(leectures)
+DP.addItem(_readMe)
+DP.addItem(assignmets)
+DP.singleClick()
+console.log(DP.doubleClick())
+
+DP.remove(_readMe)
+DP.doubleClick()
