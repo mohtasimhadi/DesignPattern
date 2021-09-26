@@ -1,11 +1,11 @@
-import Component from "./Component";
+import Node from "./Node"
 
-class Files extends Component {
+class Files implements Node {
+
     private name: string
     private type: string
-    
+
     constructor(name: string, type: string) {
-        super()
         this.name = name
         this.type = type
     }

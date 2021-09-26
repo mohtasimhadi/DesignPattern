@@ -1,24 +1,31 @@
-import Component from "./Component"
+import InnerNode from "./InnerNode"
+import Node from './Node'
 
-class Folder extends Component {
-    protected children: Component[] = [] 
-    protected name: string 
-    protected type: string 
+class Folder implements InnerNode {
 
-    constructor(name: string, type: string) {
-        super() 
-        this.name = name 
-        this.type = type 
+    private nodeList: Array<Node> = new Array<Node>()
+    private name: String
+    private type: String
+
+    constructor(name: String, type: String) {
+        this.name = name
+        this.type = type
     }
-    public addItem(component: Component): void {
-        this.children.push(component) 
+    
+    public addItem(node: Node): void {
+        this.nodeList.push(node)
     }
+
+    public removeItem(node: Node): void {
+        const nodeIndex = this.nodeList.indexOf(node) 
+        this.nodeList.splice(nodeIndex, 1) 
+    }
+
     public doubleClick(): string {
         let result = []
         result.push(`${this.name} Folder is opened`)
-        for (const child of this.children) {
-
-            result.push(child.singleClick())
+        for (const node of this.nodeList) {
+            result.push(node.singleClick())
         }
         return `${result.join('\n')}` 
     }
@@ -29,13 +36,6 @@ class Folder extends Component {
 
     public singleClick(): string {
         return `Name ${this.name} Type ${this.type}` 
-    }
-    public remove(component: Component): void {
-        const componentIndex = this.children.indexOf(component) 
-        this.children.splice(componentIndex, 1) 
-
-        // @ts-ignore
-        component.setParent(null) 
     }
 
 }
